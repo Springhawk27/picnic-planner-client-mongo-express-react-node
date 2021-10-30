@@ -10,6 +10,7 @@ import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Login from './components/Login/Login';
+import AddSpot from './components/AddSpot/AddSpot';
 
 
 
@@ -52,6 +53,9 @@ function App() {
             </Route> */}
             <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
+            </Route>
+            <Route path="/addSpot">
+              <AddSpot></AddSpot>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

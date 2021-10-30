@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <div className="sticky top-0 z-50"	>
-            <header className="text-gray-600 body-font bg-green-200  bg-texture">
+            <header className="text-gray-600 body-font bg-yellow-200  bg-texture">
                 <div className="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
                     <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                         <img src={main_logo} alt="" />
@@ -23,14 +23,14 @@ const Header = () => {
                                 color: "#48BB78"
                             }}
                             to="/services"
-                            className="mr-5 hover:text-green-700">Services</NavLink>
+                            className="mr-5 hover:text-green-700">Picnic Spot</NavLink>
                         <NavLink
                             activeStyle={{
                                 fontWeight: "bold",
                                 color: "#48BB78"
                             }}
                             to="/doctors"
-                            className="mr-5 hover:text-green-700">Doctors</NavLink>
+                            className="mr-5 hover:text-green-700">Guides</NavLink>
                         <NavLink
                             activeStyle={{
                                 fontWeight: "bold",

@@ -1,0 +1,16 @@
+.add__spot form {
+    display: flex;
+    flex-direction: column;
+    /* width: 40%; */
+    justify-content: center;
+    align-items: center;
+}
+
+.add__spot form input,textarea {
+    width: 40%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid green;
+    border-radius: 7px;
+    background-color: #E8FCF2;
+}

@@ -8,7 +8,7 @@ const AddSpot = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('http://localhost:5000/picnicSpots', data)
+        axios.post('https://scary-demon-31223.herokuapp.com/picnicSpots', data)
             .then(res => {
                 // console.log(res);
                 if (res.data.insertedId) {

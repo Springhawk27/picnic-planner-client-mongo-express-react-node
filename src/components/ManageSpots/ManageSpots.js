@@ -4,13 +4,13 @@ const ManageSpots = () => {
     const [spots, setSpots] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/picnicSpots')
+        fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
             .then(res => res.json())
             .then(data => setSpots(data))
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/picnicSpots/${id}`
+        const url = `https://scary-demon-31223.herokuapp.com/picnicSpots/${id}`
         fetch(url, {
             method: 'DELETE'
         })

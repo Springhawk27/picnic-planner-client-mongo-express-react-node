@@ -9,7 +9,7 @@ const MyBookings = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        fetch('https://scary-demon-31223.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => {
                 const myBooking = data.filter(booking => booking.email == user?.email)
@@ -18,7 +18,7 @@ const MyBookings = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/bookings/${id}`
+        const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`
         fetch(url, {
             method: 'DELETE'
         })

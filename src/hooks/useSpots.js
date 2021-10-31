@@ -6,7 +6,7 @@ import { useState } from "react"
 const useSpots = () => {
     const [spots, setSpots] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/picnicSpots')
+        fetch('https://scary-demon-31223.herokuapp.com/picnicSpots')
             .then(res => res.json())
             .then(data => setSpots(data))
     }, [])

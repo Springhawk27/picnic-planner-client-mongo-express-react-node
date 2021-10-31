@@ -15,7 +15,7 @@ const Booking = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/picnicSpots/${spotId}`)
+        fetch(`https://scary-demon-31223.herokuapp.com/picnicSpots/${spotId}`)
             .then(res => res.json())
             .then(data => setSpot(data))
     }, [])
@@ -29,7 +29,7 @@ const Booking = () => {
         data.spotLocation = spot?.location;
         data.img = spot?.img;
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://scary-demon-31223.herokuapp.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

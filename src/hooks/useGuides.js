@@ -6,7 +6,7 @@ import { useState } from "react"
 const useGuides = () => {
     const [guides, setGuides] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/guides')
+        fetch('https://scary-demon-31223.herokuapp.com/guides')
             .then(res => res.json())
             .then(data => setGuides(data))
     }, [])

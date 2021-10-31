@@ -7,7 +7,7 @@ const ManageAllBookings = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        fetch('https://scary-demon-31223.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => {
                 setBookings(data);
@@ -15,7 +15,7 @@ const ManageAllBookings = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/bookings/${id}`
+        const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`
         fetch(url, {
             method: 'DELETE'
         })

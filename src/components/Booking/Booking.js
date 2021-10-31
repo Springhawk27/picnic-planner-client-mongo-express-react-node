@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
+import './Booking.css';
+
 
 const Booking = () => {
     const { spotId } = useParams();
     const [spot, setSpot] = useState({});
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { user } = useAuth();
 
 
     useEffect(() => {
@@ -12,6 +19,33 @@ const Booking = () => {
             .then(res => res.json())
             .then(data => setSpot(data))
     }, [])
+
+
+    const onSubmit = data => {
+        const id = spotId;
+        data.orderId = id;
+        data.spotName = spot?.name;
+        data.spotPrice = spot?.price;
+        data.spotLocation = spot?.location;
+        data.img = spot?.img;
+
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Order placed successfully');
+                    reset();
+                }
+            })
+
+        console.log(data)
+    };
 
 
 
@@ -32,6 +66,21 @@ const Booking = () => {
                         Proceed to Checkout</button>
                 </NavLink>
 
+            </div>
+            <div className="order__form">
+                <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
+
+                    <input defaultValue={user?.displayName} {...register("name", { required: true })} />
+                    {errors.displayName && <span className="error">This field is required</span>}
+                    <input defaultValue={user?.email} {...register("email", { required: true })} />
+                    {errors.email && <span className="error">This field is required</span>}
+                    <input placeholder="Address" defaultValue="" {...register("address", { required: true })} />
+
+                    <input placeholder="City" defaultValue="" {...register("city", { required: true })} />
+                    <input placeholder="phone number" defaultValue="" {...register("phone", { required: true })} />
+
+                    <input type="submit" />
+                </form>
             </div>
         </div >
     );

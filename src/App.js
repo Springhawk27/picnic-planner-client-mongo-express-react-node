@@ -14,6 +14,9 @@ import AddSpot from './components/AddSpot/AddSpot';
 import Spots from './components/Spots/Spots';
 import Booking from './components/Booking/Booking';
 import ManageSpots from './components/ManageSpots/ManageSpots';
+import MyBookings from './components/MyBookings/MyBookings';
+import ManageAllBookings from './components/ManageAllBookings/ManageAllBookings';
+import Guides from './components/Guides/Guides';
 
 
 
@@ -30,11 +33,14 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            {/* <PrivateRoute path="/services">
+            <PrivateRoute path="/spots">
               <Spots></Spots>
-            </PrivateRoute> */}
-            <Route path="/spots">
-              <Spots></Spots>
+            </PrivateRoute>
+            <PrivateRoute path="/guides">
+              <Guides></Guides>
+            </PrivateRoute>
+            <Route path="/articledetail">
+              <ArticleDetail></ArticleDetail>
             </Route>
             {/* <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
@@ -42,12 +48,19 @@ function App() {
             <Route path="/booking/:spotId">
               <Booking></Booking>
             </Route>
-            <Route path="/addSpots">
+            <PrivateRoute path="/addSpots">
               <AddSpot></AddSpot>
-            </Route>
-            <Route path="/manageSpots">
+            </PrivateRoute>
+            <PrivateRoute path="/manageSpots">
               <ManageSpots></ManageSpots>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/manageAllBooking">
+              <ManageAllBookings></ManageAllBookings>
+            </PrivateRoute>
+
             {/* <PrivateRoute path="/doctors">
               <Doctors></Doctors>
             </PrivateRoute> */}
@@ -69,9 +82,9 @@ function App() {
             <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route>
-            <Route path="/addSpot">
+            {/* <PrivateRoute path="/addSpot">
               <AddSpot></AddSpot>
-            </Route>
+            </PrivateRoute> */}
             <Route path="*">
               <NotFound></NotFound>
             </Route>

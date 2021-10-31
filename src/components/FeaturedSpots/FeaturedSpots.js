@@ -3,8 +3,13 @@ import { NavLink } from 'react-router-dom';
 import useSpots from '../../hooks/useSpots';
 import Spot from '../Spot/Spot';
 
+
 const FeaturedSpots = () => {
-    const [spots] = useSpots([]);
+    const [spots, setSpots] = useSpots([]);
+
+
+
+
 
     return (
         <div>
@@ -21,8 +26,9 @@ const FeaturedSpots = () => {
                         <NavLink to="/spots" className="flex flex-wrap -m-4">
                             {
                                 spots.slice(0, 6).map(spot => <Spot
-                                    key={spot.id}
+                                    key={spot._id}
                                     spot={spot}
+
                                 ></Spot>)
                             }
 

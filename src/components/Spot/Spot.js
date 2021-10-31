@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Spot = ({ spot }) => {
-    const { _id, name, description, img } = spot;
+const Spot = (props) => {
+    const { _id, name, description, img } = props.spot;
 
     return (
         <div className="lg:w-1/3 md:w-1/2 p-4 w-full hover:shadow-xl">
@@ -16,6 +16,7 @@ const Spot = ({ spot }) => {
                     < button className="inline-flex text-white bg-yellow-400 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
                         Book {name}</button>
                 </NavLink>
+
 
             </div>
         </div >

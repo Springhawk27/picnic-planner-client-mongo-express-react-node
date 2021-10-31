@@ -32,10 +32,10 @@ const Footer = () => {
                             <h2 className="title-font font-medium text-green-600 tracking-widest text-sm mb-3">Quick Links</h2>
                             <nav className="list-none mb-2">
                                 <li>
-                                    <NavLink to="/services" className="text-gray-600 hover:text-green-500">Picnic Spot</NavLink>
+                                    <NavLink to="/spots" className="text-gray-600 hover:text-green-500">Picnic Spot</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/doctors" className="text-gray-600 hover:text-green-500">Guides</NavLink>
+                                    <NavLink to="/guides" className="text-gray-600 hover:text-green-500">Guides</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about" className="text-gray-600 hover:text-green-500">About Us</NavLink>

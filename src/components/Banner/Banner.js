@@ -13,10 +13,10 @@ const Banner = () => {
                             <br className="hidden lg:inline-block" /> that had grown big with all
                             <br className="hidden lg:inline-block" /> your love….
                         </h1>
-                        <p className="mb-8 leading-relaxed">Check your symptoms and find out what could be causing them. It's fast and  cost you less.</p>
+                        <p className="mb-8 leading-relaxed">Check your Favourite picnic spot now. It's simple, fast and  cost you less.</p>
                         <div className="flex justify-center">
                             <button className="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-                                <NavLink to="/services">Start Checkup</NavLink>
+                                <NavLink to="/spots">Book Now</NavLink>
                             </button>
                         </div>
                     </div>

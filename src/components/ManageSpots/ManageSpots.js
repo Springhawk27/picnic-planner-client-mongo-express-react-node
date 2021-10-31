@@ -10,21 +10,26 @@ const ManageSpots = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `https://scary-demon-31223.herokuapp.com/picnicSpots/${id}`
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount) {
-                    alert("Deleted")
-                    const remaining = spots.filter(spot => spot._id !== id)
-                    setSpots(remaining);
-                }
+        const proceed = window.confirm("Are you sure you want to delete")
 
+        if (proceed) {
+            const url = `https://scary-demon-31223.herokuapp.com/picnicSpots/${id}`
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        alert("Deleted")
+                        const remaining = spots.filter(spot => spot._id !== id)
+                        setSpots(remaining);
+                    }
+
+                })
+        }
     }
+
 
     return (
         <div>

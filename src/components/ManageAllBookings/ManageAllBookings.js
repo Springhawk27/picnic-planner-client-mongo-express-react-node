@@ -15,20 +15,24 @@ const ManageAllBookings = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount) {
-                    alert("Deleted")
-                    const remaining = bookings.filter(booking => booking._id !== id)
-                    setBookings(remaining);
-                }
+        const proceed = window.confirm("Are you sure you want to delete")
 
+        if (proceed) {
+            const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        alert("Deleted")
+                        const remaining = bookings.filter(booking => booking._id !== id)
+                        setBookings(remaining);
+                    }
+
+                })
+        }
     }
     return (
         <div>

@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 const ManageAllBookings = () => {
 
     const [bookings, setBookings] = useState([]);
-    const [status, setStatus] = useState({});
     const { reset } = useForm();
 
 
@@ -17,7 +16,7 @@ const ManageAllBookings = () => {
             .then(data => {
                 setBookings(data);
             })
-    }, [])
+    }, [bookings])
 
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure you want to delete")

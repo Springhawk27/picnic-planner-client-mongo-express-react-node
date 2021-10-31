@@ -28,6 +28,7 @@ const Booking = () => {
         data.spotPrice = spot?.price;
         data.spotLocation = spot?.location;
         data.img = spot?.img;
+        data.status = "Pending";
 
         fetch('https://scary-demon-31223.herokuapp.com/bookings', {
             method: 'POST',

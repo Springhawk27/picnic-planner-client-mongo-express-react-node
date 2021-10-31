@@ -50,6 +50,7 @@ const ManageAllBookings = () => {
                         <p>Location: {booking.spotLocation}</p>
                         <p>User Name: {booking.name}</p>
                         <p>User Email: {booking.email}</p>
+                        <p className="bg-green-100 my-1">Status: {booking.status}</p>
                         <button className=" bg-yellow-300 py-1 px-2 border-0 rounded" onClick={() => handleDelete(booking._id)}>Delete</button>
 
                     </div>

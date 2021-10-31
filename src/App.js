@@ -42,9 +42,7 @@ function App() {
             <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route>
-            {/* <PrivateRoute path="/booking/:serviceId">
-              <Booking></Booking>
-            </PrivateRoute> */}
+
             <Route path="/booking/:spotId">
               <Booking></Booking>
             </Route>
@@ -60,31 +58,18 @@ function App() {
             <PrivateRoute path="/manageAllBooking">
               <ManageAllBookings></ManageAllBookings>
             </PrivateRoute>
-
-            {/* <PrivateRoute path="/doctors">
-              <Doctors></Doctors>
-            </PrivateRoute> */}
             <Route path="/about">
               <About></About>
             </Route>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
-            {/* <PrivateRoute path="/profile">
-              <Profile></Profile>
-            </PrivateRoute> */}
             <Route path="/login">
               <Login></Login>
             </Route>
-            {/* <Route path="/register">
-              <Register></Register>
-            </Route> */}
             <Route path="/articledetail">
               <ArticleDetail></ArticleDetail>
             </Route>
-            {/* <PrivateRoute path="/addSpot">
-              <AddSpot></AddSpot>
-            </PrivateRoute> */}
             <Route path="*">
               <NotFound></NotFound>
             </Route>

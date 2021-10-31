@@ -28,7 +28,6 @@ const ManageAllBookings = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     if (data.deletedCount) {
                         alert("Deleted")
                         const remaining = bookings.filter(booking => booking._id !== id)

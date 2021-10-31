@@ -29,6 +29,20 @@ const Header = () => {
                                 fontWeight: "bold",
                                 color: "#48BB78"
                             }}
+                            to="/addSpots"
+                            className="mr-5 hover:text-green-700">Add Spot</NavLink>
+                        <NavLink
+                            activeStyle={{
+                                fontWeight: "bold",
+                                color: "#48BB78"
+                            }}
+                            to="/manageSpots"
+                            className="mr-5 hover:text-green-700">Manage Spots</NavLink>
+                        <NavLink
+                            activeStyle={{
+                                fontWeight: "bold",
+                                color: "#48BB78"
+                            }}
                             to="/doctors"
                             className="mr-5 hover:text-green-700">Guides</NavLink>
                         <NavLink

@@ -12,6 +12,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import Login from './components/Login/Login';
 import AddSpot from './components/AddSpot/AddSpot';
 import Spots from './components/Spots/Spots';
+import Booking from './components/Booking/Booking';
+import ManageSpots from './components/ManageSpots/ManageSpots';
 
 
 
@@ -37,6 +39,15 @@ function App() {
             {/* <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute> */}
+            <Route path="/booking/:spotId">
+              <Booking></Booking>
+            </Route>
+            <Route path="/addSpots">
+              <AddSpot></AddSpot>
+            </Route>
+            <Route path="/manageSpots">
+              <ManageSpots></ManageSpots>
+            </Route>
             {/* <PrivateRoute path="/doctors">
               <Doctors></Doctors>
             </PrivateRoute> */}

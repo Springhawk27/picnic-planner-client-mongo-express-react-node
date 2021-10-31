@@ -5,6 +5,9 @@ const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
     const { user } = useAuth();
 
+    const [status, setStatus] = useState({});
+
+
 
 
 
@@ -37,6 +40,9 @@ const MyBookings = () => {
                 })
         }
     };
+
+
+
 
     const handleStatus = (sts, id) => {
         const proceed = window.confirm("Are you sure you want to approve")

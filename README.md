@@ -1,4 +1,4 @@
-# Healthcrest Diagnosis
+# Picnic Planner
 
 Picnic Planner is a  website where anyone can look for place to have a picnic. An user can book for a picnic spot. But one must sign in first since firebase user authentication is enabled.
 

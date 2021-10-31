@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+
 
 const ManageAllBookings = () => {
 
     const [bookings, setBookings] = useState([]);
+    const [status, setStatus] = useState({});
+    const { reset } = useForm();
+
 
 
 
@@ -34,6 +39,30 @@ const ManageAllBookings = () => {
                 })
         }
     }
+
+
+
+    const handleStatus = id => {
+        const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                if (data.modifiedCount > 0) {
+                    alert("Status Updated")
+                }
+
+            })
+
+    }
+
+
     return (
         <div>
             <h2 className="bg-blue-500 py-2 text-white font-bold mb-4">Manage All  Bookings here</h2>
@@ -50,7 +79,9 @@ const ManageAllBookings = () => {
                         <p>Location: {booking.spotLocation}</p>
                         <p>User Name: {booking.name}</p>
                         <p>User Email: {booking.email}</p>
-                        <p className="bg-green-100 my-1">Status: {booking.status}</p>
+                        {/* <p className="bg-green-100 my-1">Status: {booking.status}</p> */}
+                        <button onClick={() => handleStatus(booking._id)} className="bg-green-100 my-1  border-1 p-1 rounded ">Status: {booking.status}</button>
+                        <br />
                         <button className=" bg-yellow-300 py-1 px-2 border-0 rounded" onClick={() => handleDelete(booking._id)}>Delete</button>
 
                     </div>

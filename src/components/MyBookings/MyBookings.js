@@ -5,7 +5,6 @@ const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
     const { user } = useAuth();
 
-    const [status, setStatus] = useState({});
 
 
 
@@ -44,29 +43,7 @@ const MyBookings = () => {
 
 
 
-    const handleStatus = (sts, id) => {
-        const proceed = window.confirm("Are you sure you want to approve")
-        if (proceed) {
-            const url = `https://scary-demon-31223.herokuapp.com/bookings/${id}`
-            fetch(url, {
-                method: 'PUT'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    // console.log(data)
-                    if (data.status === "Pending") {
-                        alert("Approved")
-                        // const remaining = bookings.filter(booking => booking._id !== id)
-                        // setBookings(remaining);
-                        sts = "Approved";
 
-                    }
-
-
-                })
-        }
-
-    }
 
     return (
         <div>
@@ -82,8 +59,7 @@ const MyBookings = () => {
                         <h3>Spot Name: {booking.spotName}</h3>
                         <p>Price: {booking.spotPrice} taka</p>
                         <p>Location: {booking.spotLocation}</p>
-                        {/* <p onClick={() => handleStatus(booking.status)} className="bg-green-100 my-1 ">Status: {booking.status}</p> */}
-                        <button onClick={() => handleStatus(booking.status, booking._id)} className="bg-green-100 my-1  border-1 p-1 rounded ">Status: {booking.status}</button>
+                        <p className="bg-green-100 my-1 ">Status: {booking.status}</p>
                         <br />
                         <button className=" bg-yellow-300 py-1 px-2 border-0 rounded" onClick={() => handleDelete(booking._id)}>Delete</button>
 

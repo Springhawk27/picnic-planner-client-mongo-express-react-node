@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import main_logo from '../../../images/main_logo.png'
 import useAuth from '../../../hooks/useAuth';
-import './Header.css'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 
